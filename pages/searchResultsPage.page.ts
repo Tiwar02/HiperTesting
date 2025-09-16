@@ -1,9 +1,11 @@
-import { type Page, type Locator } from '@playwright/test';
+import { type Page, type Locator, expect } from '@playwright/test';
+import { BasePage } from './base.page';
 
-export class SearchResultsPage {
+export class SearchResultsPage extends BasePage {
   readonly page: Page;
 
   constructor(page: Page) {
+    super(page);
     this.page = page;
   }
 

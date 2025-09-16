@@ -1,12 +1,14 @@
 import { type Page, type Locator, type FrameLocator } from '@playwright/test';
+import { BasePage } from './base.page';
 
-export class NewsletterPage {
+export class NewsletterPage extends BasePage {
   readonly page: Page;
   readonly beehiivFrame: FrameLocator;
   readonly emailInput: Locator;
   readonly subscribeButton: Locator;
 
   constructor(page: Page) {
+    super(page);
     this.page = page;
     // Iframe located
     this.beehiivFrame = page.locator('[data-test-id="beehiiv-embed"]').contentFrame();

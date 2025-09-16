@@ -5,10 +5,10 @@ export class HomePage {
   readonly searchToggleButton: Locator;
   readonly searchInput: Locator;
   readonly newsletterLink: Locator;
+  readonly searchTitle: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    // Defining Selectors
     this.searchToggleButton = page.locator('#search-toggle');
     this.searchInput = page.getByRole('searchbox', { name: 'Buscar:' });
     this.newsletterLink = page.getByRole('link', { name: 'Newsletter', exact: true });

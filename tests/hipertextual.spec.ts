@@ -16,9 +16,8 @@ test.describe('Test Hipertextual page with POM', () => {
     await searchResultsPage.clickArticleByTitle(/Reed Jobs/i);
 
     // Make assertions
-    await expect(page).toHaveURL(/reed-jobs/);
-    const articleTitle = page.locator('h1');
-    await expect(articleTitle).toContainText('Reed Jobs', { ignoreCase: true });
+    expect(searchResultsPage.getURL()).toMatch(/reed-jobs/);
+    await expect(await searchResultsPage.getTitle()).toContainText('Reed Jobs');
 
     // Go to Newsletter page
     const newsletterPage = new NewsletterPage(page);
@@ -26,7 +25,7 @@ test.describe('Test Hipertextual page with POM', () => {
     await homePage.goToNewsletterPage();
 
     // Subscribe to newsletter
-    await page.waitForURL('**/newsletter/');
+    await expect(newsletterPage.getURL()).toMatch(/newsletter/);
     await newsletterPage.subscribe(uniqueEmail);
   });
 
