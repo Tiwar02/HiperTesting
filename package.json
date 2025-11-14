@@ -2,13 +2,21 @@
   "name": "hipertesting",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:search": "npx playwright test --grep \"@search\"",
+    "test:newsletter": "npx playwright test --grep \"@newsletter\"",
+    "test:report": "npx playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "^1.56.0",
     "@types/node": "^24.3.1"
+  },
+  "dependencies": {
+    "typescript": "^5.9.3"
   }
 }
