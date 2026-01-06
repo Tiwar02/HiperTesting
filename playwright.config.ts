@@ -27,7 +27,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
-    headless: false,
+    headless: true,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
@@ -36,9 +36,19 @@ export default defineConfig({
   projects: [
     {
       name: 'Hypertextual',
+      testDir: './tests/hipertextual',
       use: { 
         baseURL: 'https://hipertextual.com',
         ...devices['Desktop Chrome'] },
+    },
+
+    {
+      name: 'demoqa',
+      testDir: './tests/demoqa',
+      use: {
+        baseURL: process.env.DEMOQA_URL || 'https://demoqa.com',
+        ...devices['Desktop Chrome'],
+      },
     },
 
     // {

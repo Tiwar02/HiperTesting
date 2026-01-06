@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/home.page';
-import { SearchResultsPage } from '../pages/searchResultsPage.page';
-import { NewsletterPage } from '../pages/newsletter.page';
-import { createRandomEmail } from '../helpers/testData.helper';
+import { HomePage } from '../../pages/hipertextual/home.page';
+import { SearchResultsPage } from '../../pages/hipertextual/searchResultsPage.page';
+import { NewsletterPage } from '../../pages/hipertextual/newsletter.page';
+import { createRandomEmail } from '../../helpers/testData.helper';
 
 test.describe('Test Hipertextual page with POM', () => {
 

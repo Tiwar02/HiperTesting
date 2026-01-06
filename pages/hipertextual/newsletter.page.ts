@@ -1,5 +1,5 @@
 import { type Page, type Locator, type FrameLocator } from '@playwright/test';
-import { BasePage } from './base.page';
+import { BasePage } from '../base.page';
 
 export class NewsletterPage extends BasePage {
   readonly beehiivFrame: FrameLocator;

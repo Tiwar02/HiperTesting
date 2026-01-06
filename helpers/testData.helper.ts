@@ -6,3 +6,8 @@ export function createRandomEmail(prefix: string = 'test-user'): string {
   const timestamp = Date.now();
   return `${prefix}-${timestamp}@example.com`;
 }
+
+export function createRandomUser(prefix: string = 'test-user'): string {
+  const timestamp = Date.now();
+  return `${prefix}-${timestamp}`;
+}
